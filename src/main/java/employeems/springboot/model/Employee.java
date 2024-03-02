@@ -1,7 +1,8 @@
+
 package employeems.springboot.model;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 @Table(name = "employees")
@@ -10,23 +11,20 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long emp_id;
-    @Column(name = "employee_name")
     private String emp_name;
-    @Column(name = "employee_email")
     private String emp_email;
-    @Column(name = "employee_city")
     private String emp_city;
-    @Column(name = "employee_DOB")
-    private float emp_bday;
+    private float emp_dob;
 
     public Employee(){
 
     }
-    public Employee(String emp_name, String emp_email, String emp_city, float emp_bday) {
+    public Employee(String emp_name, String emp_email, String emp_city, float emp_dob) {
+        super();
         this.emp_name = emp_name;
         this.emp_email = emp_email;
         this.emp_city = emp_city;
-        this.emp_bday = emp_bday;
+        this.emp_dob = emp_dob;
     }
 
     public long getEmp_id() {
@@ -61,11 +59,11 @@ public class Employee {
         this.emp_city = emp_city;
     }
 
-    public float getEmp_bday() {
-        return emp_bday;
+    public float getEmp_dob() {
+        return emp_dob;
     }
 
-    public void setEmp_bday(float emp_bday) {
-        this.emp_bday = emp_bday;
+    public void setEmp_dob(float emp_dob) {
+        this.emp_dob = emp_dob;
     }
 }
