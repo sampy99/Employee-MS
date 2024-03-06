@@ -28,6 +28,6 @@ public class EmployeeController {
 
 //    create rest api for add or create new employees
     public Employee createEmployee(Employee employee){
-        return
+        return employeeRepository.save(employee);
     }
 }
