@@ -4,9 +4,7 @@ import employeems.springboot.model.Employee;
 import employeems.springboot.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +25,8 @@ public class EmployeeController {
     }
 
 //    create rest api for add or create new employees
-    public Employee createEmployee(Employee employee){
+    @PostMapping("/employees")
+    public Employee createEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
 }
