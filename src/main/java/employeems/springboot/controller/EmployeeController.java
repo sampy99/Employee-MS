@@ -25,4 +25,9 @@ public class EmployeeController {
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
     }
+
+//    create rest api for add or create new employees
+    public Employee createEmployee(Employee employee){
+        return
+    }
 }
