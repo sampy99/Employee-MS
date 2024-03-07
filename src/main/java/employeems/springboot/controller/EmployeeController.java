@@ -10,6 +10,7 @@ import java.util.List;
 
 //this is controller class which is basically connect with the database
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
 public class EmployeeController {
