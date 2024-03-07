@@ -32,8 +32,8 @@ public class EmployeeController {
     }
 
 //    get employee by id using rest api
-    @GetMapping("/employees/id")
-    public Employee getEmployeeById(long id){
-
+    @GetMapping("/employees/{id}")
+    public Employee getEmployeeById(@PathVariable Long id){
+        Employee employee = employeeRepository.findById(id).orElseThrow()
     }
 }
