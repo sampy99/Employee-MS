@@ -1,5 +1,6 @@
 package employeems.springboot.controller;
 
+import employeems.springboot.exception.ResourceNotFoundException;
 import employeems.springboot.model.Employee;
 import employeems.springboot.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,6 @@ public class EmployeeController {
 //    get employee by id using rest api
     @GetMapping("/employees/{id}")
     public Employee getEmployeeById(@PathVariable Long id){
-        Employee employee = employeeRepository.findById(id).orElseThrow()
+        Employee employee = employeeRepository.findById(id).orElseThrow( () -> new ResourceNotFoundException("Employee not exist with this id!"));
     }
 }
