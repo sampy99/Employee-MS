@@ -40,4 +40,10 @@ public class EmployeeController {
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with this id!"));
         return ResponseEntity.ok(employee);
     }
+
+//    update employee rest api
+    @PutMapping("/employees/{id}")
+    public ResponseEntity<Employee> updateEmployeeById(Long id, Employee employee){
+
+    }
 }
