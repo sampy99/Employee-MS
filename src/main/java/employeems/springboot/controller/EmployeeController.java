@@ -51,5 +51,8 @@ public class EmployeeController {
         employee.setEmp_email(employeeDetails.getEmp_email());
         employee.setEmp_city(employeeDetails.getEmp_city());
         employee.setEmp_dob(employeeDetails.getEmp_dob());
+
+        Employee updatedEmployee = employeeRepository.save(employee);
+        return ResponseEntity.ok(updatedEmployee);
     }
 }
