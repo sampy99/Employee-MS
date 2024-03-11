@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 //this is controller class which is basically connect with the database
 
@@ -54,5 +55,11 @@ public class EmployeeController {
 
         Employee updatedEmployee = employeeRepository.save(employee);
         return ResponseEntity.ok(updatedEmployee);
+    }
+
+//    delete employee rest api
+    @DeleteMapping ("/employees/{id}")
+    public Map<String,Boolean> deleteEmployee(@PathVariable Long id){
+
     }
 }
