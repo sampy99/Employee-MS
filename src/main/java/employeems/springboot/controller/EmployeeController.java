@@ -60,7 +60,7 @@ public class EmployeeController {
 
 //    delete employee rest api
 
-    @DeleteMapping ("/employees")
+    @DeleteMapping ("/employees/{id}")
     public ResponseEntity <Map<String,Boolean>> deleteEmployee(@PathVariable Long id){
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with this id!"));
